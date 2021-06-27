@@ -1,0 +1,36 @@
+syntax = "proto3";
+// specifies that you're using proto3 syntax
+
+
+// to prevent name clashes between protocol message types.
+// has no effects in pytho
+// the package is used as the Java package, unless you explicitly provide an option java_package in your .proto file.
+package grpc_demo;
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+  // Another one
+  rpc AddNum (NumRequest) returns (Sum) {}
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message HelloReply {
+  string message = 1;
+}
+
+message NumRequest {
+  int32 num1 = 1;
+  int32 num2 = 2;
+}
+
+
+message Sum {
+  int32 sum = 1;
+}
