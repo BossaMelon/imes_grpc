@@ -44,8 +44,5 @@ python: https://grpc.io/docs/languages/python/quickstart/
 1. create a maven project
 2. define protobuf(make sure always use the same protobuf)
 3. download depandency and generate code with maven. Use a version which work with java 1.6!
-https://github.com/grpc/grpc-java/tree/v1.14.x
-
-
-
-### Still under construction
+https://github.com/grpc/grpc-java/tree/v1.14.x, have a look at the pom.xml
+4. program the server and client
