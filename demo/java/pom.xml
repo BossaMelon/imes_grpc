@@ -4,12 +4,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.example</groupId>
+  <groupId>edu.luh.imes</groupId>
   <artifactId>java_grpc</artifactId>
   <version>1.0-SNAPSHOT</version>
 
 
-  <!--set compile version to fit sunrise workbench, use 1.6 maybe 1.8 -->
+  <!--set compile version to fit sunrise workbench, use 1.6 maybe 1.8, not sure whether we need it-->
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.6</maven.compiler.source>

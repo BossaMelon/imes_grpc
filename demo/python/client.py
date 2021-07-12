@@ -1,32 +1,35 @@
 from __future__ import print_function
-import grpc
-import demo_pb2
-import demo_pb2_grpc
+
 import time
 
+import grpc
+
+import demo_pb2
+import demo_pb2_grpc
 
 
-def run():
-    # ip = ipcheck.get_host_ip()
-    ip = "localhost"
-    port = "50051"
-    socket = ip+":"+port
+def run(ip, port):
+    socket = ip + ":" + port
     channel = grpc.insecure_channel(socket)
 
     stub = demo_pb2_grpc.GreeterStub(channel)
-    # 新建client对象
+
+    num1 = 1
+    num2 = 2
 
     while True:
-        response = stub.SayHello(demo_pb2.HelloRequest(name='yuehao'))
-        # 对象.service对应功能(message文件.对应message(字段赋值))
-        # 类似调用service的函数
-        response2 = stub.AddNum(demo_pb2.NumRequest(num1=1,num2=10))
+        hello_reply = stub.SayHello(demo_pb2.HelloRequest(name='yuehao'))
+        sum_reply = stub.AddNum(demo_pb2.NumRequest(num1=num1, num2=num2))
 
-        print("received: " + response.message)
-        print("Sum = " + str(response2.sum))
+        print("received: " + hello_reply.message)
+        print("received sum = " + str(sum_reply.sum))
+        num1 += 1
+        num2 += 1
 
         time.sleep(1)
 
 
 if __name__ == '__main__':
-    run()
+    ip = "localhost"
+    port = "50051"
+    run(ip, port)

@@ -3,7 +3,7 @@ syntax = "proto3";
 
 
 // to prevent name clashes between protocol message types.
-// has no effects in pytho
+// has no effects in python
 // the package is used as the Java package, unless you explicitly provide an option java_package in your .proto file.
 package grpc_demo;
 
